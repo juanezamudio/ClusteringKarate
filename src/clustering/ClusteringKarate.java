@@ -77,6 +77,7 @@ public class ClusteringKarate {
 		double score = 0.0;
 		double numerator = 0.0;
 		double denominator = 0.0;
+		double sum = 0.0;
 		
 		for (String v : graph.getVertices()) {
 			List<Map<String, Double>> result = bfs(graph, v);
@@ -111,15 +112,17 @@ public class ClusteringKarate {
 							
 						} else {
 							
-							score = 0;
+							score += 0.0;
 							
 						}
 					}
 					
-					
-					
+					numerator += score;
+					denominator += sp.get(x).get(y);
 				}
 				
+				
+				sum += numerator/denominator;
 				
 			}
 			
@@ -128,7 +131,7 @@ public class ClusteringKarate {
 		
 	}
 	
-	public void SNClustering (Graph<String, String> graph) {
+	public void sn_clustering (Graph<String, String> graph) {
 		
 		
 	}
